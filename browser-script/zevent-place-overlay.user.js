@@ -2,14 +2,14 @@
 // @name         zevent-place-overlay
 // @namespace    http://tampermonkey.net/
 // @license      MIT
-// @version      1.8
+// @version      2.0
 // @description  Please organize with other participants on Discord: https://discord.gg/sXe5aVW2jV ; Press H to hide/show again the overlay.
 // @author       ludolpif, ventston
 // @match        https://place.zevent.fr/
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=zevent.fr
 // @grant        none
-// @downloadURL  https://raw.githubusercontent.com/ludolpif/overlay-zevent-place/main/browser-script/zevent-place-overlay.user.js
-// @updateURL    https://raw.githubusercontent.com/ludolpif/overlay-zevent-place/main/browser-script/zevent-place-overlay.user.js
+// @downloadURL  https://raw.githubusercontent.com/Hei5enberg44/overlay-zevent-place/main/browser-script/zevent-place-overlay.user.js
+// @updateURL    https://raw.githubusercontent.com/Hei5enberg44/overlay-zevent-place/main/browser-script/zevent-place-overlay.user.js
 // ==/UserScript==
 /*
  * Script used as base, form MinusKube: https://greasyfork.org/fr/scripts/444833-z-place-overlay/code
@@ -19,11 +19,11 @@
  */
 (function() {
     'use strict';
-    const version = "1.8";
-    const scriptUpdateURL = "https://raw.githubusercontent.com/ludolpif/overlay-zevent-place/main/browser-script/zevent-place-overlay.user.js"
+    const version = "2.0";
+    const scriptUpdateURL = "https://raw.githubusercontent.com/Hei5enberg44/overlay-zevent-place/main/browser-script/zevent-place-overlay.user.js"
     // Global constants and variables for our script
-    const overlayJSON1 = "https://timeforzevent.fr/overlay.json"; // Need CORS header (Access-Control-Allow-Origin: https://place.zevent.fr)
-    const overlayJSON2 = "https://backup.place.timeforzevent.fr/overlay.json";
+    const overlayJSON1 = "https://bsaber.fr/overlay.json"; // Need CORS header (Access-Control-Allow-Origin: https://place.zevent.fr)
+    const overlayJSON2 = "https://bsaber.fr/overlay.json";
     const inviteDiscordURL = "https://discord.gg/sXe5aVW2jV";
     let refreshOverlaysState = true; // state false: idle, true: asked, (no cooldown: throttled by keepOurselfInDOM())
     let safeModeDisableUI = false;
@@ -60,7 +60,7 @@
     //safeModeDisableUI = true;
     //loadOverlay("https://raw.githubusercontent.com/ludolpif/overlay-zevent-place/main/examples/demo-overlay.png" );
     //loadOverlay("https://raw.githubusercontent.com/ludolpif/overlay-zevent-place/main/examples/demo-overlay2.png" );
-    //loadOverlay("https://somewebsite.com/someoverlay.png","A short title" );
+    loadOverlay("https://bsaber.fr/static/BSFR.png","Logo BSFR" );
     /*
      * EN: Script users: you can edit loadOverlay(...) lines above to memorize in your browser
      *      your overlay choices without using the "Overlays" menu from this script on https://place.zevent.fr/
